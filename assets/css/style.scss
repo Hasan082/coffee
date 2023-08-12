@@ -270,7 +270,7 @@ section.product-section {
         .produt-bg {
             background-image: url("/assets/images/fourth-bg.jpg");
             background-size: cover;
-            width: 27%;
+            width: 25%;
             position: absolute;
             height: 100%;
             top: 0;
@@ -365,21 +365,26 @@ section.product-section {
 .store-section {
     padding: 90px 0;
     background-color: $secondaryBgColor;
+
     .heading {
         text-align: center;
         margin: 0 0 50px;
+
         h2 {
             color: $mainTextColor;
         }
     }
+
     .store {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 60px;
+
         .bottom-div {
             padding: 30px;
             background-color: #fff;
             text-align: center;
+
             p {
                 margin-bottom: 30px;
             }
@@ -387,3 +392,41 @@ section.product-section {
     }
 }
 
+//Video section code start here===========
+
+.video-section {
+    .video-section-inner {
+        .video {
+            display: flex;
+            >div{
+                flex-grow: 1;
+            }
+
+            .left-video {
+                width: 75%;
+                .video-container {
+                    position: relative;
+                    width: 100%;
+                    padding-bottom: 56.25%;
+                    overflow: hidden;
+                }
+
+                .video-container iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+
+            }
+
+            .right-bg-part {
+                width: 25%;
+                background-image: url("/assets/images/video-bg.jpg");
+                background-size: cover;
+                background-position: center;                
+            }
+        }
+    }
+}

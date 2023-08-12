@@ -268,7 +268,7 @@ section.product-section {
         z-index: 1;
 
         .produt-bg {
-            background-image: url("/assets/images/fourth-bg.jpg");
+            background-image: url("../images/fourth-bg.jpg");
             background-size: cover;
             width: 25%;
             position: absolute;
@@ -447,7 +447,7 @@ section.product-section {
 
             .right-bg-part {
                 width: 25%;
-                background-image: url("/assets/images/video-bg.jpg");
+                background-image: url("../images/video-bg.jpg");
                 background-size: cover;
                 background-position: center;
             }

@@ -13,12 +13,12 @@ h4 {
 
 h1 {
     font-size: 80px;
-    line-height: 1.1;
+    line-height: 1;
 }
 
 h2 {
     font-size: 60px;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 h3 {
@@ -27,7 +27,7 @@ h3 {
 }
 
 h4 {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.2;
 }
 
@@ -43,14 +43,19 @@ a {
 
 .mainContainer {
     max-width: 1440px;
+    width: 100%;
     box-sizing: border-box;
     padding: 0 20px;
     margin: 0 auto;
 }
 
 img {
+    max-width: 100%;
+    width: 100%;
+    border: none;
     vertical-align: middle;
 }
+
 span.lineBr {
     display: block;
 }
@@ -76,6 +81,8 @@ $secondaryTextColor: #1e2875;
 $btnBgColor : #e185a9;
 
 
+
+
 //DEFAULT RESUABLE MIXIN CODE HERE========================
 @mixin div-flex($items: center, $justify: space-between) {
     display: flex;
@@ -83,7 +90,7 @@ $btnBgColor : #e185a9;
     justify-content: $justify
 }
 
-ul{
+ul {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -101,6 +108,14 @@ body {
     color: #fff;
     padding: 9px 25px;
     display: inline-block;
+}
+
+.bg-pink {
+    background-color: #e185a9;
+}
+
+.bg-paste {
+    background-color: #95c1e2;
 }
 
 //Nav STYLE CODE HERE=================================
@@ -133,7 +148,7 @@ body {
 }
 
 
-//Banner  STYLE CODE HERE=================================
+//BANNER  STYLE CODE HERE=================================
 
 .banner-section {
     background-color: $secondaryBgColor;
@@ -168,7 +183,6 @@ body {
             align-items: self-start;
 
             h1 {
-
                 color: $mainTextColor;
             }
 
@@ -182,21 +196,125 @@ body {
 }
 
 
-// SECTION 2 STYLE CODE HERE=================================
+// CHOOSE SECTION STYLE CODE HERE=================================
 
 section.choose-section {
     padding: 70px 0;
+
     .choose-section-inner {
         @include div-flex();
+
+        .list-type-text {
+            ul {
+                li {
+                    @include div-flex($justify: start);
+                    gap: 20px;
+                    margin: 20px 0;
+
+                    img {
+                        max-width: 27px;
+                    }
+                }
+            }
+        }
     }
-    .list-type-text {
-        ul {
-            li {
-                @include div-flex($justify: start);
-                gap: 20px;
-                margin: 20px 0;
+
+}
+
+// QUOTE SECTION STYLE CODE HERE=================================
+
+.quote-section {
+    padding: 70px 0;
+    height: 300px;
+    background-image: url(/assets/images/third-bg.jpg);
+    background-color: $secondaryBgColor;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    color: $mainTextColor;
+    @include div-flex($justify: center);
+
+    .quote-section-inner {
+        @include div-flex($justify: center);
+
+        .quote {
+            text-align: center;
+
+            h3 {
+                font-weight: 400;
+                margin: 20px 0 40px;
+            }
+
+            h4 {
+                font-weight: 400;
+                font-style: italic;
             }
         }
     }
 }
 
+
+//Product section code start here===========
+
+section.product-section {
+    @include div-flex($justify: center);
+
+    .quote-section-inner {
+        position: relative;
+        z-index: 1;
+
+        .produt-bg {
+            background-image: url(/assets/images/fourth-bg.jpg);
+            background-size: cover;
+            width: 27%;
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        // @include div-flex($justify: center);
+
+        .product {
+            position: relative;
+            z-index: 2;
+            padding: 70px 0;
+            padding-left: 30%;
+
+            .headline {
+                @include div-flex();
+            }
+
+            .carousel-wrap {
+                padding: 55px 0;
+            }
+            .single-product-item {
+                display: flex;
+                max-width: 500px;
+
+                >div {
+                    width: 50%;
+                    gap: 20px;
+                    flex: 1;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+
+                .product-left {
+                    padding: 30px 15px 0 24px;
+                    background-color: rgba(255, 255, 255, 0.7);
+                }
+
+                .product-right {
+                    @include div-flex($justify: center);
+                    flex-direction: column;
+                    padding: 20px;
+                }
+            }
+        }
+    }
+}

@@ -1,33 +1,51 @@
-$(document).ready(function(){
-   const owl = $('.owl-carousel').owlCarousel({
-        loop:true,
+$(document).ready(function () {
+
+    // carouisel code start==================
+
+
+    const owl = $('.owl-carousel').owlCarousel({
+        loop: true,
         autoplay: true,
-        margin:30,
-        nav:false,
+        margin: 30,
+        nav: false,
         autoplayTimeout: 4000,
         smartSpeed: 750,
-        responsive:{
-            0:{
-                items:1
+        responsive: {
+            0: {
+                items: 1
             },
-            1000:{
-                items:2,
+            1000: {
+                items: 2,
             }
         }
     })
 
-    $('.customPrev').on('click',function(e){
+    $('.customPrev').on('click', function (e) {
         e.preventDefault();
         owl.trigger('prev.owl.carousel');
     });
 
-    $('.customNext').on('click',function(e){
+    $('.customNext').on('click', function (e) {
         e.preventDefault();
         owl.trigger('next.owl.carousel');
     });
 
 
+    //video section code===================
 
+    const video = $("#video")[0];
+    const playIcon = $(".play-icon");
+
+    playIcon.click(function () {
+        const player = new YT.Player(video[0], {
+            events: {
+                'onReady': function () {
+                    player.playVideo();
+                    $('.video-overlay').hide();
+                }
+            }
+        });
+    });
 
 
 });

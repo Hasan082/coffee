@@ -31,22 +31,6 @@ $(document).ready(function () {
     });
 
 
-    //video section code===================
-
-    const video = $("#video")[0];
-    const playIcon = $(".play-icon");
-
-    playIcon.click(function () {
-        const player = new YT.Player(video[0], {
-            events: {
-                'onReady': function () {
-                    player.playVideo();
-                    $('.video-overlay').hide();
-                }
-            }
-        });
-    });
-
 
 
 });

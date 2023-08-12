@@ -527,3 +527,43 @@ section.product-section {
         }
     }
 }
+
+//subscribe section code start here===========
+
+.subscribe-section {
+    @include div-flex($justify: center);
+    padding: 70px 0;
+    height: 200px;
+    background-color: $secondaryBgColor;
+    color: $mainTextColor;
+    .subscribe-section-inner {
+        @include div-flex($justify: center);
+        .subscribe {
+            text-align: center;
+            max-width: 920px;
+            margin: 0 auto;
+            .heading {
+                p {
+                    margin: 40px 0;
+                }
+            }
+
+            .subscribe-form input[type="email"]  {
+                background-color: transparent;
+                border: 1px solid grey;
+                padding: 12px 14px;
+                min-width: 280px;
+                border-right: 0px;
+            }
+            input[type="button"] {
+                padding: 12px 24px;
+                margin-left: -5px;
+                color: $secondaryTextColor;
+            }
+            .subscribe-form input:focus-visible {
+                outline: 0 !important;
+            }
+        }
+
+    }
+}

@@ -274,12 +274,11 @@ section.product-section {
             position: absolute;
             height: 100%;
             top: 0;
-            left: 0;
+            left: 20px;
             bottom: 0;
             z-index: 1;
         }
 
-        // @include div-flex($justify: center);
 
         .product {
             position: relative;
@@ -348,10 +347,43 @@ section.product-section {
             .all-product-link-wrap {
                 a {
                     text-decoration: underline;
+                    color: $secondaryTextColor;
+                    text-underline-offset: 3px;
                 }
             }
 
 
         }
     }
+}
+
+
+
+
+//Store section code start here===========
+
+.store-section {
+    padding: 90px 0;
+    background-color: $secondaryBgColor;
+    .heading {
+        text-align: center;
+        margin: 0 0 50px;
+        h2 {
+            color: $mainTextColor;
+        }
     }
+    .store {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        .bottom-div {
+            padding: 30px;
+            background-color: #fff;
+            text-align: center;
+            p {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+

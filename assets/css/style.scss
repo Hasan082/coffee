@@ -1,3 +1,15 @@
+//COLOR CODE STYLE========================================
+
+$mainBgColor: #f8eed3;
+$secondaryBgColor: #1e2875;
+
+$mainTextColor: #f8eed4;
+$secondaryTextColor: #1e2875;
+
+$btnBgColor : #e185a9;
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -60,6 +72,25 @@ span.lineBr {
     display: block;
 }
 
+
+.form-input {
+    padding: 12px 14px;
+    border: 1px solid #c1b59d !important;
+    font-size: 15px;
+    background-color: $mainBgColor;
+}
+
+.form-input:focus,
+.form-input:focus-visible {
+    outline: 0 !important;
+}
+
+.autofilled {
+    background-color: $secondaryBgColor !important;
+}
+
+
+
 body,
 p,
 a span,
@@ -70,16 +101,6 @@ form {
     font-family: 'Open Sans', sans-serif;
 }
 
-//COLOR CODE STYLE========================================
-
-$mainBgColor: #f8eed3;
-$secondaryBgColor: #1e2875;
-
-$mainTextColor: #f8eed4;
-$secondaryTextColor: #1e2875;
-
-$btnBgColor : #e185a9;
-
 
 
 
@@ -88,6 +109,11 @@ $btnBgColor : #e185a9;
     display: flex;
     align-items: $items;
     justify-content: $justify
+}
+
+@mixin bgCover() {
+    background-position: center;
+    background-size: cover;
 }
 
 ul {
@@ -228,8 +254,7 @@ section.choose-section {
     height: 300px;
     background-image: url("../images/third-bg.jpg");
     background-color: $secondaryBgColor;
-    background-size: cover;
-    background-position: center;
+    @include bgCover();
     background-blend-mode: overlay;
     color: $mainTextColor;
     @include div-flex($justify: center);
@@ -269,7 +294,7 @@ section.product-section {
 
         .produt-bg {
             background-image: url("../images/fourth-bg.jpg");
-            background-size: cover;
+            @include bgCover();
             width: 25%;
             position: absolute;
             height: 100%;
@@ -414,19 +439,17 @@ section.product-section {
 
 
                     .video-overlay {
+                        @include div-flex($justify: center);
                         position: absolute;
                         top: 0;
                         left: 0;
                         width: 100%;
                         height: 100%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
                         cursor: pointer;
                         background-image: url("../images/video-overlay.jpg");
-                        background-position: center;
-                        background-size: cover;
+                        @include bgCover();
                         z-index: 99999999;
+
                         i {
                             font-size: 90px;
                             color: $mainTextColor;
@@ -448,8 +471,58 @@ section.product-section {
             .right-bg-part {
                 width: 25%;
                 background-image: url("../images/video-bg.jpg");
-                background-size: cover;
-                background-position: center;
+                @include bgCover();
+            }
+        }
+    }
+}
+
+//Contact section code start here===========
+
+.contact-section {
+    .contact-section-inner {
+        .contact {
+            display: flex;
+
+            >div {
+                flex-grow: 1;
+            }
+
+            .left-bg {
+                width: 25%;
+                background-image: url("../images/contact-bg.jpg");
+                @include bgCover();
+            }
+
+            .right-contact-form {
+                width: 75%;
+
+                .form-wrapper {
+                    padding: 60px;
+                }
+
+                .input-row {
+                    @include div-flex();
+                    gap: 50px;
+                    margin: 15px 0;
+
+                    >div {
+                        width: 100%;
+
+                        input {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                textarea {
+                    width: 100%;
+                }
+
+                input.btn {
+                    border: none !important;
+                    margin-top: 40px;
+                }
             }
         }
     }

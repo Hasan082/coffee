@@ -240,6 +240,10 @@ section.choose-section {
         .quote {
             text-align: center;
 
+            img.icon-quote {
+                max-width: 50px;
+            }
+
             h3 {
                 font-weight: 400;
                 margin: 20px 0 40px;
@@ -285,36 +289,69 @@ section.product-section {
 
             .headline {
                 @include div-flex();
+
+
+                .carousel-icons {
+                    a {
+                        display: inline-block !important;
+                        width: 30px;
+                        height: 30px;
+                        text-align: center;
+                        border: 1px solid grey;
+                        color: grey;
+                        border-radius: 50%;
+                        line-height: 26.5px;
+
+                        i {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+
             }
 
             .carousel-wrap {
                 padding: 55px 0;
+
+                .owl-carousel .owl-stage-outer {
+                    margin-left: -24%;
+                }
+
+                .single-product-item {
+                    display: inline-flex;
+                    max-width: 500px;
+
+                    >div {
+                        width: 50%;
+                        gap: 20px;
+                        flex: 1;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+
+                    .product-left {
+                        padding: 30px 15px 0 24px;
+                        background-color: rgba(255, 255, 255, 0.7);
+                    }
+
+                    .product-right {
+                        @include div-flex($justify: center);
+                        flex-direction: column;
+                        padding: 20px;
+                    }
+                }
             }
-            .single-product-item {
-                display: flex;
-                max-width: 500px;
 
-                >div {
-                    width: 50%;
-                    gap: 20px;
-                    flex: 1;
-                }
-
-                p {
-                    font-size: 14px;
-                }
-
-                .product-left {
-                    padding: 30px 15px 0 24px;
-                    background-color: rgba(255, 255, 255, 0.7);
-                }
-
-                .product-right {
-                    @include div-flex($justify: center);
-                    flex-direction: column;
-                    padding: 20px;
+            .all-product-link-wrap {
+                a {
+                    text-decoration: underline;
                 }
             }
+
+
         }
     }
-}
+    }

@@ -671,9 +671,15 @@ $laptop-screen: 1430px;
         padding-left: 15px;
         padding-right: 15px;
     }
+
+    section.quote-section span.lineBr {
+        display: initial !important;
+    }
+
     .video-section {
         .mainContainer.video-section-inner {
             padding: 0 !important;
+
             .video-overlay {
                 i {
                     font-size: 50px !important
@@ -698,6 +704,10 @@ $laptop-screen: 1430px;
 
     nav.nav {
         flex-direction: column;
+
+        ul {
+            flex-wrap: wrap;
+        }
     }
 
     h1 {
@@ -765,6 +775,7 @@ $laptop-screen: 1430px;
 
     }
 
+
     .video-section {
         .right-bg-part {
             display: none;
@@ -797,6 +808,7 @@ $laptop-screen: 1430px;
                 input[type=email] {
                     min-width: 170px
                 }
+
                 input[type=button] {
                     padding: 12px 16px;
                 }
@@ -811,15 +823,18 @@ $laptop-screen: 1430px;
     .subscribe-section .subscribe-section-inner .subscribe .subscribe-form input[type=email] {
         min-width: 140px;
     }
+
     .contact-section {
         .form-wrapper {
             padding-left: 0px !important;
             padding-right: 0px !important;
         }
+
         .contact-section-inner {
             .contact {
                 .right-contact-form .input-row {
                     display: block;
+
                     .left-input {
                         margin-bottom: 15px;
                     }
@@ -831,6 +846,7 @@ $laptop-screen: 1430px;
     #Footer .footer-inner {
         flex-direction: column;
     }
+
     .footer-right {
         margin: 15px 0;
     }

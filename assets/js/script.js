@@ -14,7 +14,7 @@ $(document).ready(function () {
             0: {
                 items: 1
             },
-            1000: {
+            1431: {
                 items: 2,
             }
         }
